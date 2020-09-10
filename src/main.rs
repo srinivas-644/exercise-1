@@ -38,7 +38,6 @@ fn main() {
                 out_msg.set_firt_name(v[1].to_string());
                 out_msg.set_date(v[2].to_string());
                 let out_bytes: Vec<u8> = out_msg.write_to_bytes().unwrap();
-                println!("out={:?}", out_bytes);
                 let mut file = OpenOptions::new()
                     .append(true)
                     .open(output)
