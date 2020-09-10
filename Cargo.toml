@@ -1,0 +1,14 @@
+[package]
+name = "filess"
+version = "0.1.0"
+authors = ["cjpl"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.33"
+protobuf = "2"
+
+[build-dependencies]
+protoc-rust = "2.0"
