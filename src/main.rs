@@ -45,7 +45,7 @@ fn main() {
                     .open(output)
                     .expect("cannot open file");
                 let encoded_len = binencode(&out_bytes.len().encode_var_vec());
-                writeln!(file, "{:?},{:?}", encoded_len, out_bytes).expect("scd");
+                writeln!(file, "{:?},{:?}", encoded_len, out_bytes).expect("file doesnt exist");
             }
         }
     }
