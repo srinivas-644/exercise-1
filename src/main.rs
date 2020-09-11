@@ -53,7 +53,7 @@ fn main() {
     where
         P: AsRef<Path>,
     {
-        let file = File::open(filename)?;
+        let file = File::open(filename).expect("files doesn't exist,Enter the correct input filename");
         Ok(io::BufReader::new(file).lines())
     }
     fn binencode(b: &[u8]) -> String {
