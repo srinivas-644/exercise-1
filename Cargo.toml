@@ -9,6 +9,7 @@ edition = "2018"
 [dependencies]
 clap = "2.33"
 protobuf = "2"
+integer-encoding = "1"
 
 [build-dependencies]
 protoc-rust = "2.0"

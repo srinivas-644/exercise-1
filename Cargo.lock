@@ -52,6 +52,7 @@ name = "filess"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "integer-encoding",
  "protobuf",
  "protoc-rust",
 ]
@@ -75,6 +76,12 @@ checksum = "3deed196b6e7f9e44a2ae8d94225d80302d81208b1bb673fd21fe634645c85a9"
 dependencies = [
  "libc",
 ]
+
+[[package]]
+name = "integer-encoding"
+version = "1.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4f4ebd0bd29be0f11973e9b3e219005661042a019fd757798c36a47c87852625"
 
 [[package]]
 name = "libc"

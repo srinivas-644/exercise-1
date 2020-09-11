@@ -8,8 +8,10 @@ use std::io::BufRead;
 use std::path::Path;
 extern crate clap;
 mod proto;
+use integer_encoding::VarInt;
 use proto::foo::Person;
 use protobuf::Message;
+
 fn main() {
     let m = App::new("Exercise-1")
         .about("about:Assignment")
@@ -42,7 +44,8 @@ fn main() {
                     .append(true)
                     .open(output)
                     .expect("cannot open file");
-                writeln!(file, "{:?},{:?}", out_bytes.len(), out_bytes).expect("scd");
+                let encoded_len = binencode(&out_bytes.len().encode_var_vec());
+                writeln!(file, "{:?},{:?}", encoded_len, out_bytes).expect("scd");
             }
         }
     }
@@ -52,5 +55,12 @@ fn main() {
     {
         let file = File::open(filename)?;
         Ok(io::BufReader::new(file).lines())
+    }
+    fn binencode(b: &[u8]) -> String {
+        let mut s = String::new();
+        for byte in b {
+            s.push_str(&format!("{:08b} ", byte));
+        }
+        s
     }
 }
