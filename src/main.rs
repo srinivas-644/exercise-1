@@ -56,7 +56,7 @@ fn main() {
         let file = File::open(filename).expect("files doesn't exist,Enter the correct input filename");
         Ok(io::BufReader::new(file).lines())
     }
-    fn binencode(b: &[u8]) -> String {
+    fn binencode(b: &[u8]) ->  String {
         let mut s = String::new();
         for byte in b {
             s.push_str(&format!("{:08b} ", byte));
